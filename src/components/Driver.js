@@ -1,6 +1,5 @@
 import React from 'react';
 
-import MyComponent from "./MyComponent";
 import Sidebar from './Sidebar';
 
 class Driver extends React.Component {
@@ -101,18 +100,14 @@ class Driver extends React.Component {
                             />
                             </div>
 
-                            <div className="col-sm">
-                            <p>Placeholder :)</p>
-                            </div>
-
-                            <div className="col-sm">
-                            <MyComponent/>
-                            </div>
-                    
+                        <div className="col-sm">
+                        <p>Placeholder :)</p>
                         </div>
+                  
                     </div>
                 </div>
             </div>
+        </div>
         )
     }
 }
