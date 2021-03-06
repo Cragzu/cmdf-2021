@@ -22,7 +22,8 @@ class Driver extends React.Component {
     // Add money from checking acc into savings
     addBalanceSavings(amount) {
         if (amount > this.state.checkingAccountBalance) {
-            console.log("Not enough money for this transaction!") // todo: visually display this
+            console.log("Not enough money for this transaction!"); // todo: visually display this
+            return;
         }
         this.setState({
             checkingAccountBalance: this.state.checkingAccountBalance - amount,
@@ -33,11 +34,41 @@ class Driver extends React.Component {
     // Add money from savings acc into checking
     subtractBalanceSavings(amount) {
         if (amount > this.state.savingsAccountBalance) {
-            console.log("Not enough money for this transaction!") // todo: visually display this
+            console.log("Not enough money for this transaction!"); // todo: visually display this
+            return;
         }
         this.setState({
             checkingAccountBalance: this.state.checkingAccountBalance + amount,
             savingsAccountBalance: this.state.savingsAccountBalance - amount
+        });
+    }
+
+    // Add money from checking acc into TFSA
+    addBalanceTFSA(amount) {
+        if (amount > this.state.checkingAccountBalance) {
+            console.log("Not enough money for this transaction!"); // todo: visually display this
+            return;
+        }
+        if (amount + this.state.tfsaAccountBalance > this.state.tfsaContributionRoom) {
+            console.log("Not enough contribution room for this transaction!");
+            return;
+        }
+
+        this.setState({
+            checkingAccountBalance: this.state.checkingAccountBalance - amount,
+            tfsaAccountBalance: this.state.tfsaAccountBalance + amount
+        });
+    }
+
+    // Add money from TFSA acc into checking
+    subtractBalanceTFSA(amount) {
+        if (amount > this.state.tfsaAccountBalance) {
+            console.log("Not enough money for this transaction!") // todo: visually display this
+            return;
+        }
+        this.setState({
+            checkingAccountBalance: this.state.checkingAccountBalance + amount,
+            tfsaAccountBalance: this.state.tfsaAccountBalance - amount
         });
     }
 
@@ -53,7 +84,7 @@ class Driver extends React.Component {
 
     render() {
         return (
-            <div className={'Driver', "container"}>
+            <div className={'Driver'}>
                 <div className="col-md-12">
                     <div className="row">
                         <div className="col-md-4">
@@ -74,9 +105,6 @@ class Driver extends React.Component {
                   
                     </div>
                 </div>
-                
-                {/*all components go in here*/}
-                
             </div>
         )
     }
