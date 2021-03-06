@@ -81,18 +81,24 @@ class Driver extends React.Component {
         });
     }
 
+    nextMonth = () => {
+
+    }
+
     render() {
         return (
-            <div className={'Driver'}>
-                <div className="col-md-12">
-                    <div className="row">
-                        <div className="col-md-4">
-                        <Sidebar 
-                        checkingAccountBalance={this.state.checkingAccountBalance}
-                        currentNetWorth={this.state.currentNetWorth}
-                        currentMonth={this.state.currentMonth}
-                        />
-                        </div>
+            <div className={'Driver'} style={{display: "contents"}}>
+                <div className="container">
+                    <div className="col-md-12">
+                        <div className="row">
+                            <div className="col-md-4">
+                            <Sidebar 
+                            checkingAccountBalance={this.state.checkingAccountBalance}
+                            currentNetWorth={this.state.currentNetWorth}
+                            currentMonth={this.state.currentMonth}
+                            nextMonth={this.nextMonth}
+                            />
+                            </div>
 
                         <div className="col-sm">
                         <p>Placeholder :)</p>
@@ -101,6 +107,7 @@ class Driver extends React.Component {
                     </div>
                 </div>
             </div>
+        </div>
         )
     }
 }
