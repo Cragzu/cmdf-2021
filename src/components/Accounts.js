@@ -1,11 +1,8 @@
 import react, { Component } from 'react';
 
 class Accounts extends Component{
-    constructor(props) {
+     constructor(props) {
         super(props);
-        this.state = {
-
-        }
     }
 
     nextMonth = () => {
@@ -19,7 +16,7 @@ class Accounts extends Component{
                 <p className={"card-text"}>Balance:  ${this.props.checkingAccountBalance}</p>
                 <p className={"card-text"}>Balance(TSFA):         $0.00</p>
                 <p className={"card-text"}>Contribution room</p>
-                <a href="#" className={"card-link"}>Deposit</a>
+                <a href="#" className={"card-link"} style={{paddingRight: '10em'}}>Deposit</a>
                 <a href="#" className={"card-link"}>Withdraw</a>
             </div>
             </div>
