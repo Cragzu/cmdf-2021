@@ -1,7 +1,7 @@
 import React from 'react';
 
 import MyComponent from "./MyComponent";
-
+import Accounts from "./Accounts";
 class Driver extends React.Component {
     constructor(props) {
         super(props);
@@ -21,6 +21,7 @@ class Driver extends React.Component {
                 {/*all components go in here*/}
                 <p>Placeholder :)</p>
                 <MyComponent/>
+                <Accounts/>
             </div>
         )
     }
