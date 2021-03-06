@@ -1,6 +1,6 @@
 import React from 'react';
 
-// test component
+// test component, delete later
 class MyComponent extends React.Component {
     constructor(props) {
         super(props);
