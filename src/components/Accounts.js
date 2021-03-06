@@ -13,14 +13,14 @@ class Accounts extends Component{
     }
     render() {
         return(
-            <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">Everyday Savings</h5>
-                <p class="card-text">Balance:  ${this.props.checkingAccountBalance}</p>
-                <p class="card-text">Balance(TSFA):         $0.00</p>
-                <p class="card-text">Contribution room</p>
-                <a href="#" class="card-link">Deposit</a>
-                <a href="#" class="card-link">Withdraw</a>
+            <div className={"card"} style={{width: '18rem'}}>
+            <div className={"card-body"}>
+                <h5 className={"card-title"}>Everyday Savings</h5>
+                <p className={"card-text"}>Balance:  ${this.props.checkingAccountBalance}</p>
+                <p className={"card-text"}>Balance(TSFA):         $0.00</p>
+                <p className={"card-text"}>Contribution room</p>
+                <a href="#" className={"card-link"}>Deposit</a>
+                <a href="#" className={"card-link"}>Withdraw</a>
             </div>
             </div>
              );
