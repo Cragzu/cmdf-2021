@@ -1,5 +1,7 @@
 import React from 'react';
 
+import MyComponent from "./MyComponent";
+
 class Driver extends React.Component {
     constructor(props) {
         super(props);
@@ -10,9 +12,15 @@ class Driver extends React.Component {
         }
     }
 
-
-
-
+    render() {
+        return (
+            <div className={'Driver'}>
+                {/*all components go in here*/}
+                <p>Placeholder :)</p>
+                <MyComponent/>
+            </div>
+        )
+    }
 }
 
 export default Driver;
