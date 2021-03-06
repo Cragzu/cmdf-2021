@@ -1,4 +1,5 @@
 import react, { Component } from 'react';
+import placeholderImg from '../assets/hasComfy.png';
 
 class Sidebar extends Component{
     constructor(props) {
@@ -14,25 +15,25 @@ class Sidebar extends Component{
 
     render() {
         return(
-            <div className="sidebar col-md-3">
+            <div className="sidebar">
                 <div>
                     <h1 className="logo-header">App X</h1>
                 </div>
                 
-                <div>
-                    <image></image>
+                <div className="sidebar-img">
+                    <img src={placeholderImg}/>
+                </div>
+
+                <div className="pocket-section">
+                    <h2 className="sidebar-money">Pocket Money: ${this.props.checkingAccountBalance}</h2>
                 </div>
 
                 <div>
-                    <h2 className="sidebar-money">Pocket Money: 100.0</h2>
+                    <h2 className="sidebar-money">Net Worth: ${this.props.currentNetWorth}</h2>
                 </div>
 
-                <div>
-                    <h2 className="sidebar-money">Net Worth: 100.0</h2>
-                </div>
-
-                <div>
-                    <button onClick={this.nextMonth} className="next-month">Next Month</button>
+                <div className="next-month">
+                    <button type="button" onClick={this.nextMonth} className="btn btn-secondary">Next Month</button>
                 </div>
             </div>
         );
