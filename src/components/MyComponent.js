@@ -6,3 +6,5 @@ class MyComponent extends React.Component {
     //  components go in this folder
     }
 }
+
+export default MyComponent;
