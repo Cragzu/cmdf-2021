@@ -16,6 +16,10 @@ class Driver extends React.Component {
         }
     }
 
+    nextMonth = () => {
+
+    }
+
     render() {
         return (
             <div className={'Driver', "container"}>
@@ -26,6 +30,7 @@ class Driver extends React.Component {
                         checkingAccountBalance={this.state.checkingAccountBalance}
                         currentNetWorth={this.state.currentNetWorth}
                         currentMonth={this.state.currentMonth}
+                        nextMonth={this.nextMonth}
                         />
                         </div>
 

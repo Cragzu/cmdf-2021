@@ -4,14 +4,9 @@ import placeholderImg from '../assets/hasComfy.png';
 class Sidebar extends Component{
     constructor(props) {
         super(props);
-        this.state = {
-
-        }
     }
 
-    nextMonth = () => {
-        
-    }
+    
 
     render() {
         return(
@@ -33,7 +28,7 @@ class Sidebar extends Component{
                 </div>
 
                 <div className="next-month">
-                    <button type="button" onClick={this.nextMonth} className="btn btn-secondary">Next Month</button>
+                    <button type="button" onClick={this.props.nextMonth} className="btn btn-secondary">Next Month</button>
                 </div>
             </div>
         );
