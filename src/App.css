@@ -46,10 +46,28 @@
   background-color: gray;
 }
 
+.sidebar-img {
+  height: 15%;
+}
+
+.prof-image {
+  object-fit: contain;
+  height: -webkit-fill-available;
+}
+
 .logo-header {
   font-size: 3.5rem;
 }
 
 .pocket-section {
-  padding-top: 10%;
+  padding-top: 30%;
+}
+
+.next-month {
+  padding-top: 15%;
+}
+
+.next-month-btn {
+  font-size: large;
+  padding: 15px 40px;
 }
