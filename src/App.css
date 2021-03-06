@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.sidebar {
+  padding: 10px;
+  background-color: gray;
+}
+
+.logo-header {
+  font-size: 3.5rem;
+}
+
+.pocket-section {
+  padding-top: 10%;
+}

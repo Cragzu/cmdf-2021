@@ -1,4 +1,5 @@
 import './App.css';
+import Sidebar from './components/Sidebar';
 
 import Driver from "./components/Driver";
 import React from "react";

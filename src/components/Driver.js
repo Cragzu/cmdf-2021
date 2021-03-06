@@ -1,6 +1,7 @@
 import React from 'react';
 
 import MyComponent from "./MyComponent";
+import Sidebar from './Sidebar';
 
 class Driver extends React.Component {
     constructor(props) {
@@ -17,10 +18,30 @@ class Driver extends React.Component {
 
     render() {
         return (
-            <div className={'Driver'}>
+            <div className={'Driver', "container"}>
+                <div className="col-md-12">
+                    <div className="row">
+                        <div className="col-md-4">
+                        <Sidebar 
+                        checkingAccountBalance={this.state.checkingAccountBalance}
+                        currentNetWorth={this.state.currentNetWorth}
+                        currentMonth={this.state.currentMonth}
+                        />
+                        </div>
+
+                        <div className="col-sm">
+                        <p>Placeholder :)</p>
+                        </div>
+
+                        <div className="col-sm">
+                        <MyComponent/>
+                        </div>
+                  
+                    </div>
+                </div>
+                
                 {/*all components go in here*/}
-                <p>Placeholder :)</p>
-                <MyComponent/>
+                
             </div>
         )
     }
