@@ -16,8 +16,8 @@ class Accounts extends Component{
             <div class="card" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title">Everyday Savings</h5>
-                <p class="card-text">Balance:           $100.00</p>
-                <p class="card-text">Balance(TSFA):         $80.00</p>
+                <p class="card-text">Balance:  ${this.props.checkingAccountBalance}</p>
+                <p class="card-text">Balance(TSFA):         $0.00</p>
                 <p class="card-text">Contribution room</p>
                 <a href="#" class="card-link">Deposit</a>
                 <a href="#" class="card-link">Withdraw</a>

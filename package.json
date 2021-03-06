@@ -39,7 +39,10 @@
   },
   "description": "README coming soon!",
   "main": "index.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "favicons-webpack-plugin": "^5.0.2",
+    "webpack-pwa-manifest": "^4.3.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Cragzu/cmdf-2021.git"
