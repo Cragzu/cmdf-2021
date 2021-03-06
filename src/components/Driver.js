@@ -81,6 +81,13 @@ class Driver extends React.Component {
         });
     }
 
+    moveToNextMonth = () => {
+        console.log(`Value of 'this'`, this);
+        this.addBalanceSavings(2); // todo: used for testing, delete later
+        this.monthlyCompoundInterestCashAccounts()
+    };
+
+
     render() {
         return (
             <div className={'Driver'}>
@@ -91,6 +98,7 @@ class Driver extends React.Component {
                         checkingAccountBalance={this.state.checkingAccountBalance}
                         currentNetWorth={this.state.currentNetWorth}
                         currentMonth={this.state.currentMonth}
+                        click={this.moveToNextMonth}
                         />
                         </div>
 
