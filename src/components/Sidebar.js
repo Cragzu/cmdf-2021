@@ -1,4 +1,5 @@
 import react, { Component } from 'react';
+import PropTypes from 'prop-types';
 import placeholderImg from '../assets/hasComfy.png';
 
 class Sidebar extends Component{
@@ -6,7 +7,7 @@ class Sidebar extends Component{
         super(props);
     }
 
-    
+
 
     render() {
         return(
@@ -28,11 +29,15 @@ class Sidebar extends Component{
                 </div>
 
                 <div className="next-month">
-                    <button type="button" onClick={this.props.nextMonth} className="btn btn-secondary">Next Month</button>
+                    <button type="button" onClick={this.props.click} className="btn btn-secondary">Next Month</button>
                 </div>
             </div>
         );
     }
 }
+
+Sidebar.propTypes = {
+    click: PropTypes.func.isRequired,
+};
 
 export default Sidebar;
