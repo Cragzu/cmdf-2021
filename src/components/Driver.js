@@ -62,7 +62,7 @@ class Driver extends React.Component {
     // Add money from TFSA acc into checking
     subtractBalanceTFSA(amount) {
         if (amount > this.state.tfsaAccountBalance) {
-            console.log("Not enough money for this transaction!") // todo: visually display this
+            console.log("Not enough money for this transaction!"); // todo: visually display this
             return;
         }
         this.setState({
@@ -82,8 +82,6 @@ class Driver extends React.Component {
     }
 
     moveToNextMonth = () => {
-        console.log(`Value of 'this'`, this);
-        this.addBalanceSavings(2); // todo: used for testing, delete later
         this.monthlyCompoundInterestCashAccounts()
     };
 
