@@ -45,11 +45,12 @@
   min-height: 100vh;
   width: 20vw;
   padding: 10px;
-  background-color: gray;
+  padding-bottom: 1em;
+  background-color: #99D17B;
 }
 
 .sidebar-img {
-  height: 15%;
+  height: 3em;
 }
 
 .sidebar-money {
@@ -61,21 +62,32 @@
   height: -webkit-fill-available;
 }
 
+.Age-date-section{
+  padding-top: 3em;
+  font-size: larger;
+}
 .logo-header {
   font-size: 3.5rem;
+  
 }
 
-.pocket-section {
-  padding-top: 30%;
+.pocket-section >p {
+  padding-top: 1.4em;
+  font-size: 1.25em;
 }
 
 .next-month {
   padding-top: 15%;
+  padding-bottom: 1em;
 }
 
 .next-month-btn {
-  font-size: large;
-  padding: 15px 40px;
+  font-size: x-large;
+  padding: 0.75em 1.5em;
+  color: #99D17B;
+  background-color: white;
+  border: white;
+  border-radius: 0.4em;
 }
 
 .percentage-block {
