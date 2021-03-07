@@ -104,10 +104,6 @@
   padding-bottom: 2.5%;
 }
 
-.card-button {
-  margin: 5px;
-}
-
 .text-units {
   font-size: x-large;
 }
@@ -142,7 +138,7 @@
 .cash-account-deposit-confirmation {
   display: flex;
   flex-direction: column;
-  /* background-color: #FAF3E9; */
+  padding-bottom: 5em;
 }
 .gic{
   position: relative;
@@ -155,5 +151,10 @@
 }
 
 .card-button{
-
+width: 20em;
+height: 2.6em;
+margin-right: 8em;
+margin-top: 3em;
+background-color: #FAF3E9;
+color: black;
 }
