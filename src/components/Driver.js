@@ -101,61 +101,51 @@ class Driver extends React.Component {
 
     render() {
         return (
-            <div className={'Driver'}>
-                <div className="col-md-15">
-                    <div className="row">
-                        <div className="col-md-2">
-                        <Sidebar 
-                        checkingAccountBalance={this.state.checkingAccountBalance.toFixed(2)}
-                        currentNetWorth={this.state.currentNetWorth.toFixed(2)}
-                        currentMonth={this.state.currentMonth}
-                        changeMonthButtonOnClick={this.moveToNextMonth}
-                        />
-                        </div>
+            <div>
+                <Sidebar
+                    checkingAccountBalance={this.state.checkingAccountBalance.toFixed(2)}
+                    currentNetWorth={this.state.currentNetWorth.toFixed(2)}
+                    currentMonth={this.state.currentMonth}
+                    changeMonthButtonOnClick={this.moveToNextMonth}
+                />
+                <div className={'driver'}>
 
-                        <div className="col-sm">
-                        <CashAccount
-                            accountTypeIsTFSA={false}
-                            savingsAccountBalance={this.state.savingsAccountBalance.toFixed(2)}
-                            addBalanceSavingsOnClick={this.addBalanceSavings}
-                            subtractBalanceSavingsOnClick={this.subtractBalanceSavings}
-                            addBalanceTFSAOnClick={this.addBalanceTFSA}
-                            subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
-                            
-                        />
-                         <CashAccount
-                            accountTypeIsTFSA={true}
-                            tfsaAccountBalance={this.state.tfsaAccountBalance.toFixed(2)}
-                            tfsaContributionRoom={this.state.tfsaContributionRoom.toFixed(2)}
-                            addBalanceSavingsOnClick={this.addBalanceSavings}
-                            subtractBalanceSavingsOnClick={this.subtractBalanceSavings}
-                            addBalanceTFSAOnClick={this.addBalanceTFSA}
-                            subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
-                        />
-                        
-                        <div style={{paddingTop: "40em"}}>
-                        <GIC />
-                        </div>
-                        </div>
 
+                    <CashAccount
+                        accountTypeIsTFSA={false}
+                        savingsAccountBalance={this.state.savingsAccountBalance.toFixed(2)}
+                        addBalanceSavingsOnClick={this.addBalanceSavings}
+                        subtractBalanceSavingsOnClick={this.subtractBalanceSavings}
+                        addBalanceTFSAOnClick={this.addBalanceTFSA}
+                        subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
+
+                    />
+                    <CashAccount
+                        accountTypeIsTFSA={true}
+                        tfsaAccountBalance={this.state.tfsaAccountBalance.toFixed(2)}
+                        tfsaContributionRoom={this.state.tfsaContributionRoom.toFixed(2)}
+                        addBalanceSavingsOnClick={this.addBalanceSavings}
+                        subtractBalanceSavingsOnClick={this.subtractBalanceSavings}
+                        addBalanceTFSAOnClick={this.addBalanceTFSA}
+                        subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
+                    />
+
+                    <div style={{paddingTop: "40em"}}>
+                        <GIC/>
                     </div>
 
-                    <div className="row">
-                        <div className="col-md-3">
-
-                        </div>
-
-                        <div className="col-md-4" style={{paddingTop: "40em"}}>
-                            <MutualFunds />
-                        </div>
-
-                        <div className="col-md-4" style={{paddingTop: "40em"}}>
-                            <Stocks />
-                        </div>
-                        
+                    <div className="col-md-4" style={{paddingTop: "40em"}}>
+                        <MutualFunds/>
                     </div>
+
+                    <div className="col-md-4" style={{paddingTop: "40em"}}>
+                        <Stocks/>
+                    </div>
+
                 </div>
             </div>
+
+
         )
     }
 }

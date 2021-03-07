@@ -18,17 +18,17 @@ class CashAccount extends Component {
                 <h5 className={"card-title"} style={{color: "black"}}>{CashAccount.sentences.savings}</h5>
                 <img src={placeholderImg} className="proff-image"/>
                 <p className={"card-text"} style={{color: "black"}}>Balance: ${this.props.savingsAccountBalance}</p>
-                <div style={{ marginLeft: 10, marginRight: 10, borderTopWidth: 1, borderStyle: 'dashed', borderColor:'black'}}></div>
             </div>
         );
     }
 
     renderTfsaAccount() {
-        return(
+        return (
             <div>
                 <h5 className={"card-title"} style={{color: "black"}}>{CashAccount.sentences.tfsa}</h5>
                 <p className={"card-text"} style={{color: "black"}}>Balance: ${this.props.tfsaAccountBalance}</p>
-                <p className={"card-text"} style={{color: "black"}}>Contribution room: ${this.props.tfsaContributionRoom}</p>
+                <p className={"card-text"} style={{color: "black"}}>Contribution room:
+                    ${this.props.tfsaContributionRoom}</p>
             </div>
         );
     }
@@ -51,7 +51,9 @@ class CashAccount extends Component {
         return (
             <div className={"cash-account-deposit-confirmation"}>
                 <input
-                    onChange={(evt) => { this.setState({inputAmount: evt.target.value}); }} // update state with text box value
+                    onChange={(evt) => {
+                        this.setState({inputAmount: evt.target.value});
+                    }} // update state with text box value
                     placeholder={CashAccount.sentences.inputPlaceholder}
                 />
                 <div>
@@ -76,13 +78,15 @@ class CashAccount extends Component {
 
     render() {
         return (
-            <div>
-                <div className={"card-account"}>
-                    <div className={"card-body"}>
-                        {this.props.accountTypeIsTFSA ? this.renderTfsaAccount() : this.renderSavingsAccount()}
-                        {this.renderDepositConfirmation()}
-                    </div>
-                </div>
+            <div className={"card-account"}>
+                {this.props.accountTypeIsTFSA ? this.renderTfsaAccount() : this.renderSavingsAccount()}
+                <div style={{
+                    margin: 10,
+                    borderTopWidth: 1,
+                    borderStyle: 'dashed',
+                    borderColor: 'black'
+                }}/>
+                {this.renderDepositConfirmation()}
             </div>
         );
     }
@@ -101,12 +105,12 @@ CashAccount.propTypes = {
 };
 
 CashAccount.sentences = {
-  savings: "Everyday Savings",
-  tfsa: "Tax-Free Savings",
-  deposit: "Deposit",
-  withdraw: "Withdraw",
-  cancel: "Cancel",
-  inputPlaceholder: "Enter amount",
+    savings: "Everyday Savings",
+    tfsa: "Tax-Free Savings",
+    deposit: "Deposit",
+    withdraw: "Withdraw",
+    cancel: "Cancel",
+    inputPlaceholder: "Enter amount",
 };
 
 export default CashAccount;

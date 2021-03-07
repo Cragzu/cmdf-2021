@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #8f452c;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -38,10 +38,17 @@
   }
 }
 
+.driver {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .sidebar {
   position: fixed;
   min-height: 100vh;
-  width: 20vw;
+  left: 0;
+  top: 0;
   background-color: #99D17B;
 }
 
@@ -107,18 +114,17 @@
 
 .card-account{
    background-color: #FAF3E9;
-   margin-left: 2.2em;
-   border: 2em solid #8f452c;
-   width: 50em;
-   height: 60em;
-   margin-right: 0;
+  width: 45vw;
+  height: 45vh;
+  margin: 16px;
+
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 }
 
 .card-body{
  text-align: center;
- padding: 10em 1em;
+  height: 45vh;
 }
 
 .card-title{
@@ -126,12 +132,7 @@
 }
 
 .card-text{
-  /* position: absolute; */
-  width: 863px;
-  height: 21px;
-  /* left: 434px; */
-  top: 494px;
-  justify-content: left;
+
 }
 
 .proff-image {
@@ -154,9 +155,5 @@
 }
 
 .card-button{
-position: absolute;
-width: 427px;
-height: 43px;
-left: 664px;
-top: 569px;
+
 }
