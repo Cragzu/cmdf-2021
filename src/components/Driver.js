@@ -85,8 +85,17 @@ class Driver extends React.Component {
         });
     }
 
+    // receive a base amount each month. todo: get different amounts based on random events?
+    monthlyGetAllowance() {
+        this.setState({
+            checkingAccountBalance: this.state.checkingAccountBalance + 50.0
+        });
+    }
+
+    // do all monthly functions
     moveToNextMonth = () => {
         this.monthlyCompoundInterestCashAccounts();
+        this.monthlyGetAllowance();
     };
 
 
