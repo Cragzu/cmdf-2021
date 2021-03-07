@@ -10,8 +10,8 @@ class Driver extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            checkingAccountBalance: 100.0,
-            currentNetWorth: 100.0,
+            checkingAccountBalance: 100.00,
+            currentNetWorth: 100.00,
             currentMonth: 0, // months go from 0-95 for gameplay between 10 and 18 years of age (8yr * 12mo = 96mo)
             savingsAccountBalance: 0,
             savingsInterestRate: 0.005,
@@ -95,7 +95,7 @@ class Driver extends React.Component {
             <div className={'Driver'}>
                 <div className="col-md-12">
                     <div className="row">
-                        <div className="col-md-4">
+                        <div className="col-md-3">
                         <Sidebar 
                         checkingAccountBalance={this.state.checkingAccountBalance}
                         currentNetWorth={this.state.currentNetWorth}
@@ -112,13 +112,23 @@ class Driver extends React.Component {
                             tfsaAccountBalance={this.state.tfsaAccountBalance}
                             tfsaContributionRoom={this.state.tfsaContributionRoom}
                         />
-                        <MutualFunds />
                         </div>
 
-                        <div className="col-sm">
-                        <Stocks />
+                    </div>
+
+                    <div className="row">
+                        <div className="col-md-3">
+
                         </div>
 
+                        <div className="col-md-4" style={{paddingTop: "10px"}}>
+                            <MutualFunds />
+                        </div>
+
+                        <div className="col-md-4" style={{paddingTop: "10px"}}>
+                            <Stocks />
+                        </div>
+                        
                     </div>
                 </div>
             </div>
