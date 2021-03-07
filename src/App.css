@@ -152,3 +152,11 @@
   padding: 0 90px;
   font-size: x-large;
 }
+
+.card-button{
+position: absolute;
+width: 427px;
+height: 43px;
+left: 664px;
+top: 569px;
+}
