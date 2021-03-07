@@ -1,7 +1,8 @@
 import React from 'react';
 
 import Sidebar from './Sidebar';
-import SavingsAccount from "./SavingsAccount";
+import SavingsAccount from "./accounts/SavingsAccount";
+import TfsaAccount from "./accounts/TfsaAccount";
 
 class Driver extends React.Component {
     constructor(props) {
@@ -105,11 +106,12 @@ class Driver extends React.Component {
                         <div className="col-sm">
                         <SavingsAccount
                             savingsAccountBalance={this.state.savingsAccountBalance}
-                            tsfaAccountBalance={this.state.tfsaAccountBalance}
-                            tsfaContributionRoom={this.state.tfsaContributionRoom}
+                        />
+                        <TfsaAccount
+                            tfsaAccountBalance={this.state.tfsaAccountBalance}
+                            tfsaContributionRoom={this.state.tfsaContributionRoom}
                         />
                         </div>
-                  
                     </div>
                 </div>
             </div>
