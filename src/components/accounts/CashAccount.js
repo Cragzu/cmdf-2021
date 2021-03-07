@@ -14,8 +14,8 @@ class CashAccount extends Component {
     renderSavingsAccount() {
         return (
             <div>
-                <h5 className={"card-title"}>{CashAccount.sentences.savings}</h5>
-                <p className={"card-text"}>Balance: ${this.props.savingsAccountBalance}</p>
+                <h5 className={"card-title"} style={{color: "black"}}>{CashAccount.sentences.savings}</h5>
+                <p className={"card-text"} style={{color: "black"}}>Balance: ${this.props.savingsAccountBalance}</p>
             </div>
         );
     }
@@ -23,9 +23,9 @@ class CashAccount extends Component {
     renderTfsaAccount() {
         return(
             <div>
-                <h5 className={"card-title"}>{CashAccount.sentences.tfsa}</h5>
-                <p className={"card-text"}>Balance: ${this.props.tfsaAccountBalance}</p>
-                <p className={"card-text"}>Contribution room: ${this.props.tfsaContributionRoom}</p>
+                <h5 className={"card-title"} style={{color: "black"}}>{CashAccount.sentences.tfsa}</h5>
+                <p className={"card-text"} style={{color: "black"}}>Balance: ${this.props.tfsaAccountBalance}</p>
+                <p className={"card-text"} style={{color: "black"}}>Contribution room: ${this.props.tfsaContributionRoom}</p>
             </div>
         );
     }
