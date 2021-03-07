@@ -7,6 +7,7 @@ class GIC extends React.Component {
 
     render() {
         return(
+            <div className="gic">
             <div className="card">
                 <div className="card-body">
                     <h3 style={{color: "black"}}>Guaranteed Investment Certificate</h3>
@@ -19,6 +20,7 @@ class GIC extends React.Component {
                         <button type="button" className="btn btn-secondary">Buy</button>
                     </div>
                 </div>
+            </div>
             </div>
         );
     }

@@ -5,41 +5,27 @@ class MFStocksCards extends Component {
     constructor(props) {
         super(props);
     }
-
-
+    
     render() {
         return(
             <div className="card">
                 <div className="card-body">
-                    <h3 className="card-title" style={{color: "black"}}>{this.props.title ? this.props.title : "Title"}</h3>
+                    <h3 className="card-title" style={{color: "black"}}>Title</h3>
                     <div>
-                        <p className="percentage-block" style={{color: "black"}}>${this.props.stockVal ? this.props.stockVal : 125.32}</p>
-                        <p className="percentage-block" style={{color: "black"}}>{this.props.percentage ? this.props.percentage : 67 }%</p>
+                        <p className="percentage-block" style={{color: "black"}}>$123.45</p>
+                        <p className="percentage-block" style={{color: "black"}}>12%</p>
                     </div>
 
                     <div className="image-block">
-                        
+                        <img src={stats} className="stocks-img"/>
                     </div>
 
-                    <p style={{color: "black"}} className="text-units">Units: {this.props.unit ? this.props.unit : 0}</p>
+                    <p style={{color: "black"}} className="text-units">Units: 50.93</p>
 
                     <p style={{color: "black"}} className="text-units">{this.props.gainLoss ?"Gain/Loss: " + this.props.gainLoss : null}</p>
 
-                    <button 
-                        type="button" 
-                        className="btn btn-secondary card-button"
-                        onClick={() => {
-                            this.props.sellStocks(this.props.stockVal, this.props.numStock);
-                        }}
-                        >{this.props.action}</button>
-                    
-                    <button 
-                    type="button" 
-                    className="btn btn-secondary card-button"
-                    onClick={() => {
-                        this.props.buyStocks(this.props.stockVal, this.props.numStock);
-                    }}
-                    >Buy</button>
+                    <button type="button" className="btn btn-secondary card-button">{this.props.action}</button>
+                    <button type="button" className="btn btn-secondary card-button">Buy</button>
                 </div>
             </div>
         );

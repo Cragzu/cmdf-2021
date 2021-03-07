@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -14,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #8f452c;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -37,23 +38,22 @@
   }
 }
 
+.driver {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .sidebar {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
   min-height: 100vh;
-  width: 20vw;
-  padding: 10px;
-  background-color: gray;
+  left: 0;
+  top: 0;
+  background-color: #99D17B;
 }
 
 .sidebar-img {
-  height: 15%;
-}
-
-.sidebar-money {
-    font-size: 24px;
+  height: 3em;
 }
 
 .prof-image {
@@ -61,28 +61,38 @@
   height: -webkit-fill-available;
 }
 
+.Age-date-section{
+  padding-top: 3em;
+  font-size: larger;
+}
 .logo-header {
   font-size: 3.5rem;
+  
 }
 
-.pocket-section {
-  padding-top: 30%;
+.pocket-section >p {
+  padding-top: 1.4em;
+  font-size: 1.25em;
 }
 
 .next-month {
   padding-top: 15%;
+  padding-bottom: 1em;
 }
 
 .next-month-btn {
-  font-size: large;
-  padding: 15px 40px;
+  font-size: x-large;
+  padding: 0.75em 1.5em;
+  color: #99D17B;
+  background-color: white;
+  border: white;
+  border-radius: 0.4em;
 }
 
 .percentage-block {
   display: inline-block;
   vertical-align: top;
-  padding: 0 5px;
-  font-size: large;
+  padding: 0 66px;
 }
 
 .stocks-img {
@@ -94,22 +104,54 @@
   padding-bottom: 2.5%;
 }
 
-.card-button {
-  margin: 5px;
-}
-
 .text-units {
   font-size: x-large;
+}
+
+.card-account{
+   background-color: #FAF3E9;
+  width: 45vw;
+  height: 45vh;
+  margin: 16px;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+.card-body{
+ text-align: center;
+  height: 45vh;
+}
+
+.card-title{
+  padding-bottom: 1.5em;
+}
+
+.card-text{
+
+}
+
+.proff-image {
+  padding-bottom: 1em;
 }
 
 .cash-account-deposit-confirmation {
   display: flex;
   flex-direction: column;
+  padding-bottom: 5em;
+    align-items: center;
 }
-
+.gic{
+  position: relative;
+}
 .gis-block {
   display: inline-block;
   vertical-align: top;
   padding: 0 90px;
   font-size: x-large;
+}
+
+.card-button{
+background-color: #FAF3E9;
+color: black;
 }
