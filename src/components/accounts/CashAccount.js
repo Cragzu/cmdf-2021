@@ -29,6 +29,14 @@ class CashAccount extends Component {
         );
     }
 
+    deposit() {
+        this.props.addBalanceSavingsOnClick(5);
+    }
+
+    withdraw() {
+        this.props.subtractBalanceSavingsOnClick(5);
+    }
+
     renderDepositConfirmation(isDeposit) {
         return (
             <div className={"cash-account-deposit-confirmation"}>
@@ -39,12 +47,14 @@ class CashAccount extends Component {
                     <button
                         type="button"
                         className="btn btn-secondary card-button"
+                        onClick={() => this.deposit()}
                     >
                         {CashAccount.sentences.deposit}
                     </button>
                     <button
                         type="button"
                         className="btn btn-secondary card-button"
+                        onClick={() => this.withdraw()}
                     >
                         {isDeposit ? CashAccount.sentences.deposit : CashAccount.sentences.withdraw}
                     </button>
@@ -72,10 +82,11 @@ CashAccount.propTypes = {
     savingsAccountBalance: PropTypes.number,
     tfsaAccountBalance: PropTypes.number,
     tfsaContributionRoom: PropTypes.number,
-    addBalanceSavingsOnClick: PropTypes.func,
+    addBalanceSavingsOnClick: PropTypes.func.isRequired,
     subtractBalanceSavingsOnClick: PropTypes.func,
     addBalanceTFSAOnClick: PropTypes.func,
     subtractBalanceTFSAOnClick: PropTypes.func,
+    parentObject: PropTypes.object,
 };
 
 CashAccount.sentences = {

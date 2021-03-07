@@ -22,7 +22,7 @@ class Driver extends React.Component {
     }
 
     // Add money from checking acc into savings
-    addBalanceSavings(amount) {
+    addBalanceSavings = (amount) => {
         if (amount > this.state.checkingAccountBalance) {
             console.log("Not enough money for this transaction!"); // todo: visually display this
             return;
@@ -34,7 +34,7 @@ class Driver extends React.Component {
     }
 
     // Add money from savings acc into checking
-    subtractBalanceSavings(amount) {
+    subtractBalanceSavings = (amount) => {
         if (amount > this.state.savingsAccountBalance) {
             console.log("Not enough money for this transaction!"); // todo: visually display this
             return;
@@ -46,7 +46,7 @@ class Driver extends React.Component {
     }
 
     // Add money from checking acc into TFSA
-    addBalanceTFSA(amount) {
+    addBalanceTFSA = (amount) => {
         if (amount > this.state.checkingAccountBalance) {
             console.log("Not enough money for this transaction!"); // todo: visually display this
             return;
@@ -63,7 +63,7 @@ class Driver extends React.Component {
     }
 
     // Add money from TFSA acc into checking
-    subtractBalanceTFSA(amount) {
+    subtractBalanceTFSA = (amount) => {
         if (amount > this.state.tfsaAccountBalance) {
             console.log("Not enough money for this transaction!"); // todo: visually display this
             return;
@@ -121,6 +121,8 @@ class Driver extends React.Component {
                             accountTypeIsTFSA={true}
                             tfsaAccountBalance={this.state.tfsaAccountBalance}
                             tfsaContributionRoom={this.state.tfsaContributionRoom}
+                            addBalanceSavingsOnClick={this.addBalanceSavings}
+                            subtractBalanceSavingsOnClick={this.subtractBalanceSavings}
                         />
                         </div>
 
