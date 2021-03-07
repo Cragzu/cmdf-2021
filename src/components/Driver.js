@@ -1,4 +1,6 @@
 import React from 'react';
+import MutualFunds from './MutualFunds';
+import Stocks from './Stocks';
 
 import Sidebar from './Sidebar';
 
@@ -101,9 +103,13 @@ class Driver extends React.Component {
                             </div>
 
                         <div className="col-sm">
-                        <p>Placeholder :)</p>
+                        <MutualFunds />
                         </div>
-                  
+
+                        <div className="col-sm">
+                        <Stocks />
+                        </div>
+
                     </div>
                 </div>
             </div>
