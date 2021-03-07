@@ -13,7 +13,7 @@ class Sidebar extends Component{
         return(
             <div className="sidebar">
                 <div>
-                    <h1 className="logo-header">App X</h1>
+                    <h1 className="logo-header">Copper</h1>
                 </div>
                 
                 <div className="sidebar-img">

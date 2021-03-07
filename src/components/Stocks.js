@@ -8,9 +8,9 @@ class Stocks extends Component {
 
     render() {
         return(
-            <div>
+            <div style={{backgroundColor: "gray"}}>
                 <h1>Stocks</h1>
-                <MFStocksCards />
+                <MFStocksCards action={"Sell"} gainLoss={null}/>
             </div>
         );
     }

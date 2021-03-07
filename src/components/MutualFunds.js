@@ -9,9 +9,9 @@ class MutualFunds extends Component {
     
     render() {
         return(
-            <div>
+            <div style={{backgroundColor: "gray"}}>
                 <h1>Mutual Funds</h1>
-                <MFStocksCards />
+                <MFStocksCards action={"Redeem"} gainLoss={"+54.32"}/>
             </div>
         );
     }
