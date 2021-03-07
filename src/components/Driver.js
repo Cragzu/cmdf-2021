@@ -96,6 +96,12 @@ class Driver extends React.Component {
     moveToNextMonth = () => {
         this.monthlyCompoundInterestCashAccounts();
         this.monthlyGetAllowance();
+        
+        if (this.state.currentMonth <= 95) {
+            this.setState({
+                currentMonth: this.state.currentMonth + 1
+            })
+        }
     };
 
 
@@ -130,12 +136,13 @@ class Driver extends React.Component {
 
                         </div>
 
+                        
                         <div className="col-md-4" style={{paddingTop: "10px"}}>
-                            <MutualFunds />
+                            {this.state.currentMonth >= 48 ? <MutualFunds /> : null}
                         </div>
 
                         <div className="col-md-4" style={{paddingTop: "10px"}}>
-                            <Stocks />
+                            {this.state.currentMonth >= 60 ? <Stocks /> : null}
                         </div>
                         
                     </div>
