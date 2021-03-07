@@ -100,3 +100,10 @@
 .text-units {
   font-size: x-large;
 }
+
+.gis-block {
+  display: inline-block;
+  vertical-align: top;
+  padding: 0 90px;
+  font-size: x-large;
+}
