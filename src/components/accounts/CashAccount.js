@@ -30,11 +30,11 @@ class CashAccount extends Component {
     }
 
     deposit() {
-        this.props.addBalanceSavingsOnClick(5);
+        this.props.accountTypeIsTFSA ? this.props.addBalanceTFSAOnClick(5) : this.props.addBalanceSavingsOnClick(5)
     }
 
     withdraw() {
-        this.props.subtractBalanceSavingsOnClick(5);
+        this.props.accountTypeIsTFSA ? this.props.subtractBalanceTFSAOnClick(5) : this.props.subtractBalanceSavingsOnClick(5)
     }
 
     renderDepositConfirmation(isDeposit) {

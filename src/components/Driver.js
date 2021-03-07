@@ -31,7 +31,7 @@ class Driver extends React.Component {
             checkingAccountBalance: this.state.checkingAccountBalance - amount,
             savingsAccountBalance: this.state.savingsAccountBalance + amount
         });
-    }
+    };
 
     // Add money from savings acc into checking
     subtractBalanceSavings = (amount) => {
@@ -43,7 +43,7 @@ class Driver extends React.Component {
             checkingAccountBalance: this.state.checkingAccountBalance + amount,
             savingsAccountBalance: this.state.savingsAccountBalance - amount
         });
-    }
+    };
 
     // Add money from checking acc into TFSA
     addBalanceTFSA = (amount) => {
@@ -60,7 +60,7 @@ class Driver extends React.Component {
             checkingAccountBalance: this.state.checkingAccountBalance - amount,
             tfsaAccountBalance: this.state.tfsaAccountBalance + amount
         });
-    }
+    };
 
     // Add money from TFSA acc into checking
     subtractBalanceTFSA = (amount) => {
@@ -72,7 +72,7 @@ class Driver extends React.Component {
             checkingAccountBalance: this.state.checkingAccountBalance + amount,
             tfsaAccountBalance: this.state.tfsaAccountBalance - amount
         });
-    }
+    };
 
     // Add interest to cash accounts at the end of the month
     monthlyCompoundInterestCashAccounts() {
@@ -116,6 +116,10 @@ class Driver extends React.Component {
                         <CashAccount
                             accountTypeIsTFSA={false}
                             savingsAccountBalance={this.state.savingsAccountBalance}
+                            addBalanceSavingsOnClick={this.addBalanceSavings}
+                            subtractBalanceSavingsOnClick={this.subtractBalanceSavings}
+                            addBalanceTFSAOnClick={this.addBalanceTFSA}
+                            subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
                         />
                         <CashAccount
                             accountTypeIsTFSA={true}
@@ -123,6 +127,8 @@ class Driver extends React.Component {
                             tfsaContributionRoom={this.state.tfsaContributionRoom}
                             addBalanceSavingsOnClick={this.addBalanceSavings}
                             subtractBalanceSavingsOnClick={this.subtractBalanceSavings}
+                            addBalanceTFSAOnClick={this.addBalanceTFSA}
+                            subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
                         />
                         </div>
 
