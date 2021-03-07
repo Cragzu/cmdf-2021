@@ -11,28 +11,19 @@ class CashAccount extends Component {
 
     renderSavingsAccount() {
         return (
-            <div className={"card"}>
-                <div className={"card-body"}>
-                    <h5 className={"card-title"}>Everyday Savings</h5>
-                    <p className={"card-text"}>Balance: ${this.props.savingsAccountBalance}</p>
-                    <button type="button" className="btn btn-secondary card-button">Deposit</button>
-                    <button type="button" className="btn btn-secondary card-button">Withdraw</button>
-                    {this.state.test ? <p>hi</p> : <p>bye</p>}
-                </div>
+            <div>
+                <h5 className={"card-title"}>{CashAccount.sentences.savings}</h5>
+                <p className={"card-text"}>Balance: ${this.props.savingsAccountBalance}</p>
             </div>
         );
     }
 
     renderTfsaAccount() {
         return(
-            <div className={"card"}>
-                <div className={"card-body"}>
-                    <h5 className={"card-title"}>Tax-Free Savings</h5>
-                    <p className={"card-text"}>Balance: ${this.props.tfsaAccountBalance}</p>
-                    <p className={"card-text"}>Contribution room: ${this.props.tfsaContributionRoom}</p>
-                    <a href="#" className={"card-link"} style={{paddingRight: '10em'}}>Deposit</a>
-                    <a href="#" className={"card-link"}>Withdraw</a>
-                </div>
+            <div>
+                <h5 className={"card-title"}>{CashAccount.sentences.tfsa}</h5>
+                <p className={"card-text"}>Balance: ${this.props.tfsaAccountBalance}</p>
+                <p className={"card-text"}>Contribution room: ${this.props.tfsaContributionRoom}</p>
             </div>
         );
     }
@@ -40,7 +31,13 @@ class CashAccount extends Component {
     render() {
         return (
             <div>
-                {this.props.accountTypeIsTFSA ? this.renderTfsaAccount() : this.renderSavingsAccount()}
+                <div className={"card"}>
+                    <div className={"card-body"}>
+                        {this.props.accountTypeIsTFSA ? this.renderTfsaAccount() : this.renderSavingsAccount()}
+                        <button type="button" className="btn btn-secondary card-button">{CashAccount.sentences.deposit}</button>
+                        <button type="button" className="btn btn-secondary card-button">{CashAccount.sentences.withdraw}</button>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -51,6 +48,14 @@ CashAccount.propTypes = {
     savingsAccountBalance: PropTypes.number,
     tfsaAccountBalance: PropTypes.number,
     tfsaContributionRoom: PropTypes.number,
+};
+
+CashAccount.sentences = {
+  savings: "Everyday Savings",
+  tfsa: "Tax-Free Savings",
+  deposit: "Deposit",
+  withdraw: "Withdraw",
+  cancel: "Cancel",
 };
 
 export default CashAccount;
