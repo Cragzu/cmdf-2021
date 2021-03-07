@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Sidebar from './Sidebar';
+import SavingsAccount from "./SavingsAccount";
 
 class Driver extends React.Component {
     constructor(props) {
@@ -9,11 +10,11 @@ class Driver extends React.Component {
             checkingAccountBalance: 100.0,
             currentNetWorth: 100.0,
             currentMonth: 0, // months go from 0-95 for gameplay between 10 and 18 years of age (8yr * 12mo = 96mo)
-            savingsAccountBalance: 0,
+            savingsAccountBalance: 15,
             savingsInterestRate: 0.005,
             tfsaAccountBalance: 0,
             tfsaInterestRate: 0.008,
-            tfsaContributionRoom: 8000,
+            tfsaContributionRoom: 8000.0,
             // add more values as needed
         };
     }
@@ -73,7 +74,8 @@ class Driver extends React.Component {
 
     // Add interest to cash accounts at the end of the month
     monthlyCompoundInterestCashAccounts() {
-        let savingsInterest = (this.state.savingsAccountBalance * this.state.savingsAccountBalance) / 12;
+        let savingsInterest = (this.state.savingsAccountBalance * this.state.savingsInterestRate) / 12;
+        console.log(savingsInterest);
         let tfsaInterest = (this.state.tfsaAccountBalance * this.state.tfsaInterestRate) / 12;
         this.setState({
             savingsAccountBalance: this.state.savingsAccountBalance + savingsInterest,
@@ -82,7 +84,7 @@ class Driver extends React.Component {
     }
 
     moveToNextMonth = () => {
-        this.monthlyCompoundInterestCashAccounts()
+        this.monthlyCompoundInterestCashAccounts();
     };
 
 
@@ -96,12 +98,16 @@ class Driver extends React.Component {
                         checkingAccountBalance={this.state.checkingAccountBalance}
                         currentNetWorth={this.state.currentNetWorth}
                         currentMonth={this.state.currentMonth}
-                        click={this.moveToNextMonth}
+                        changeMonthButtonOnClick={this.moveToNextMonth}
                         />
                         </div>
 
                         <div className="col-sm">
-                        <p>Placeholder :)</p>
+                        <SavingsAccount
+                            savingsAccountBalance={this.state.savingsAccountBalance}
+                            tsfaAccountBalance={this.state.tfsaAccountBalance}
+                            tsfaContributionRoom={this.state.tfsaContributionRoom}
+                        />
                         </div>
                   
                     </div>
