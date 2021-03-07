@@ -26,6 +26,7 @@ class CashAccount extends Component {
         return (
             <div>
                 <h5 className={"card-title"} style={{color: "black"}}>{CashAccount.sentences.tfsa}</h5>
+                <img src={placeholderImg} className="proff-image"/>
                 <p className={"card-text"} style={{color: "black"}}>Balance: ${this.props.tfsaAccountBalance}</p>
                 <p className={"card-text"} style={{color: "black"}}>Contribution room:
                     ${this.props.tfsaContributionRoom}</p>
@@ -51,10 +52,9 @@ class CashAccount extends Component {
         return (
             <div className={"cash-account-deposit-confirmation"}>
                 <input
-                    onChange={(evt) => {
-                        this.setState({inputAmount: evt.target.value});
-                    }} // update state with text box value
+                    onChange={(evt) => {this.setState({inputAmount: evt.target.value});}} // update state with text box value
                     placeholder={CashAccount.sentences.inputPlaceholder}
+                    style={{width: '80%'}}
                 />
                 <div>
                     <button
