@@ -32,7 +32,6 @@ class CashAccount extends Component {
 
     deposit() {
         let amount = Number(this.state.inputAmount);
-        console.log(amount);
         if (!isNaN(amount)) {
             this.props.accountTypeIsTFSA ? this.props.addBalanceTFSAOnClick(amount) : this.props.addBalanceSavingsOnClick(amount);
         }
