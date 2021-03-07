@@ -19,8 +19,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -40,7 +40,7 @@
 
 .driver {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   flex-direction: column;
 }
 
@@ -109,11 +109,10 @@
 }
 
 .card-account{
-   background-color: #FAF3E9;
-  width: 45vw;
-  height: 45vh;
-  margin: 16px;
-
+  background-color: #FAF3E9;
+  width: 35vw;
+  height: 35vh;
+  margin: 1em 1em;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 }
@@ -124,11 +123,8 @@
 }
 
 .card-title{
-  padding-bottom: 1.5em;
-}
-
-.card-text{
-
+  padding-bottom: 1em;
+  padding-top: 1em;
 }
 
 .proff-image {
@@ -151,9 +147,9 @@
 }
 
 .card-button{
-width: 20em;
+width: 10em;
 height: 2.6em;
-margin-right: 8em;
+margin-right: 2em;
 margin-top: 3em;
 background-color: #FAF3E9;
 color: black;

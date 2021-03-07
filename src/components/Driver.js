@@ -109,7 +109,8 @@ class Driver extends React.Component {
                     changeMonthButtonOnClick={this.moveToNextMonth}
                 />
                 <div className={'driver'}>
-
+                <div className="row">
+                 <div className="col-sm-6">
 
                     <CashAccount
                         accountTypeIsTFSA={false}
@@ -120,6 +121,8 @@ class Driver extends React.Component {
                         subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
 
                     />
+                    </div>
+                    <div className="col-sm-6">
                     <CashAccount
                         accountTypeIsTFSA={true}
                         tfsaAccountBalance={this.state.tfsaAccountBalance.toFixed(2)}
@@ -129,11 +132,12 @@ class Driver extends React.Component {
                         addBalanceTFSAOnClick={this.addBalanceTFSA}
                         subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
                     />
-
+                    </div>
+                    <div className="col-sm-6">
                     <div style={{paddingTop: "40em"}}>
                         <GIC/>
                     </div>
-
+                    </div></div>
                     <div className="col-md-4" style={{paddingTop: "40em"}}>
                         <MutualFunds/>
                     </div>
