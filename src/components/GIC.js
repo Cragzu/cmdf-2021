@@ -17,7 +17,7 @@ class GIC extends React.Component {
                     
 
                     <div>
-                        <button type="button" className="btn btn-secondary">Buy</button>
+                        <button type="button" className="card-button">Buy</button>
                     </div>
                 </div>
             </div>

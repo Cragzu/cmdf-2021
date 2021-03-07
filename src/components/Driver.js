@@ -138,51 +138,6 @@ class Driver extends React.Component {
 
     render() {
         return (
-
-            // <div>
-            //     <Sidebar
-            //         checkingAccountBalance={this.state.checkingAccountBalance.toFixed(2)}
-            //         currentNetWorth={this.state.currentNetWorth.toFixed(2)}
-            //         currentMonth={this.state.currentMonth}
-            //         changeMonthButtonOnClick={this.moveToNextMonth}
-            //     />
-            //     <div className={'driver'}>
-            //     <div className="row">
-            //      <div className="col-sm-6">
-
-            //         <CashAccount
-            //             accountTypeIsTFSA={false}
-            //             savingsAccountBalance={this.state.savingsAccountBalance.toFixed(2)}
-            //             addBalanceSavingsOnClick={this.addBalanceSavings}
-            //             subtractBalanceSavingsOnClick={this.subtractBalanceSavings}
-            //             addBalanceTFSAOnClick={this.addBalanceTFSA}
-            //             subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
-
-            //         />
-            //         </div>
-            //         <div className="col-sm-6">
-            //         <CashAccount
-            //             accountTypeIsTFSA={true}
-            //             tfsaAccountBalance={this.state.tfsaAccountBalance.toFixed(2)}
-            //             tfsaContributionRoom={this.state.tfsaContributionRoom.toFixed(2)}
-            //             addBalanceSavingsOnClick={this.addBalanceSavings}
-            //             subtractBalanceSavingsOnClick={this.subtractBalanceSavings}
-            //             addBalanceTFSAOnClick={this.addBalanceTFSA}
-            //             subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
-            //         />
-            //         </div>
-            //         <div className="col-sm-6">
-            //         <div style={{paddingTop: "40em"}}>
-            //             <GIC/>
-            //         </div>
-            //         </div></div>
-            //         <div className="col-md-4" style={{paddingTop: "40em"}}>
-            //             <MutualFunds/>
-            //         </div>
-
-            //         <div className="col-md-4" style={{paddingTop: "40em"}}>
-            //             <Stocks/>
-
             <div className={'Driver'}>
                 <div className="col">
                     <div className="row">
@@ -195,7 +150,7 @@ class Driver extends React.Component {
                         />
                         </div>
 
-                        <div className="col-sm">
+                        <div className="col-sm-3">
                         <CashAccount
                             accountTypeIsTFSA={false}
                             savingsAccountBalance={this.state.savingsAccountBalance.toFixed(2)}

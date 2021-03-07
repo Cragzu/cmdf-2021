@@ -19,7 +19,7 @@ class Sidebar extends Component{
                     <img src={placeholderImg} className="prof-image"/>
                 </div>
                 <div className="Age-date-section">
-                <p >Age: 
+                <p >Age: 13
                 <br/>January 2021</p>
                 </div>
                  <div style={{ borderTop: "4px solid white ", marginLeft: 100, marginRight: 100, marginTop: 40 }}></div>
