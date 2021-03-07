@@ -97,10 +97,6 @@
   padding-bottom: 2.5%;
 }
 
-.card-button {
-  margin: 5px;
-}
-
 .text-units {
   font-size: x-large;
 }
@@ -126,10 +122,8 @@
 }
 
 .card-text{
-  /* position: absolute; */
   width: 863px;
   height: 21px;
-  /* left: 434px; */
   top: 494px;
   justify-content: left;
 }
@@ -141,7 +135,7 @@
 .cash-account-deposit-confirmation {
   display: flex;
   flex-direction: column;
-  /* background-color: #FAF3E9; */
+  padding-bottom: 5em;
 }
 .gic{
   position: relative;
@@ -154,9 +148,10 @@
 }
 
 .card-button{
-position: absolute;
-width: 427px;
-height: 43px;
-left: 664px;
-top: 569px;
+width: 20em;
+height: 2.6em;
+margin-right: 8em;
+margin-top: 3em;
+background-color: #FAF3E9;
+color: black;
 }
