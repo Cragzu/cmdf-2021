@@ -17,7 +17,7 @@ class Sidebar extends Component{
                 </div>
                 
                 <div className="sidebar-img">
-                    <img src={placeholderImg}/>
+                    <img src={placeholderImg} className="prof-image"/>
                 </div>
 
                 <div className="pocket-section">
@@ -29,7 +29,7 @@ class Sidebar extends Component{
                 </div>
 
                 <div className="next-month">
-                    <button type="button" onClick={this.props.click} className="btn btn-secondary">Next Month</button>
+                    <button type="button" onClick={this.props.nextMonth} className="btn btn-secondary next-month-btn">Next Month</button>
                 </div>
             </div>
         );
