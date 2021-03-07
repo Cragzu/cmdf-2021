@@ -3,6 +3,8 @@ import MutualFunds from './MutualFunds';
 import Stocks from './Stocks';
 
 import Sidebar from './Sidebar';
+import SavingsAccount from "./accounts/SavingsAccount";
+import TfsaAccount from "./accounts/TfsaAccount";
 
 class Driver extends React.Component {
     constructor(props) {
@@ -75,7 +77,7 @@ class Driver extends React.Component {
 
     // Add interest to cash accounts at the end of the month
     monthlyCompoundInterestCashAccounts() {
-        let savingsInterest = (this.state.savingsAccountBalance * this.state.savingsAccountBalance) / 12;
+        let savingsInterest = (this.state.savingsAccountBalance * this.state.savingsInterestRate) / 12;
         let tfsaInterest = (this.state.tfsaAccountBalance * this.state.tfsaInterestRate) / 12;
         this.setState({
             savingsAccountBalance: this.state.savingsAccountBalance + savingsInterest,
@@ -84,7 +86,7 @@ class Driver extends React.Component {
     }
 
     moveToNextMonth = () => {
-        this.monthlyCompoundInterestCashAccounts()
+        this.monthlyCompoundInterestCashAccounts();
     };
 
 
@@ -98,11 +100,18 @@ class Driver extends React.Component {
                         checkingAccountBalance={this.state.checkingAccountBalance}
                         currentNetWorth={this.state.currentNetWorth}
                         currentMonth={this.state.currentMonth}
-                        click={this.moveToNextMonth}
+                        changeMonthButtonOnClick={this.moveToNextMonth}
                         />
                         </div>
 
                         <div className="col-sm">
+                        <SavingsAccount
+                            savingsAccountBalance={this.state.savingsAccountBalance}
+                        />
+                        <TfsaAccount
+                            tfsaAccountBalance={this.state.tfsaAccountBalance}
+                            tfsaContributionRoom={this.state.tfsaContributionRoom}
+                        />
                         <MutualFunds />
                         </div>
 
