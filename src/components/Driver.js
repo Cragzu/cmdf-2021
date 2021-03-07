@@ -4,6 +4,7 @@ import Stocks from './Stocks';
 
 import Sidebar from './Sidebar';
 import CashAccount from "./accounts/CashAccount";
+import GIC from "./GIC";
 
 class Driver extends React.Component {
     constructor(props) {
@@ -130,6 +131,7 @@ class Driver extends React.Component {
                             addBalanceTFSAOnClick={this.addBalanceTFSA}
                             subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
                         />
+                        <GIC />
                         </div>
 
                     </div>
