@@ -18,6 +18,10 @@ class Driver extends React.Component {
             tfsaAccountBalance: 0,
             tfsaInterestRate: 0.008,
             tfsaContributionRoom: 8000,
+            listOfStocks: ["TSLA", "MSFT", "AMZN"],
+            stockVal: [Math.floor(Math.random() * 1001), Math.floor(Math.random() * 1001), Math.floor(Math.random() * 1001)],
+            percentage: [Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31)],
+            units: [0, 0, 0]
             // add more values as needed
         };
     }
@@ -92,17 +96,50 @@ class Driver extends React.Component {
         });
     }
 
+    sellStocks = (value, index) => {
+        if (this.state.units[index] > 0) {
+            this.state.units[index]--;
+            this.setState({
+                checkingAccountBalance: this.state.checkingAccountBalance + value,
+            });
+        }
+    }
+
+    buyStocks = (value, index) => {
+        if (this.state.checkingAccountBalance >=  value) {
+            this.state.units[index]++;
+            this.setState({
+                checkingAccountBalance: this.state.checkingAccountBalance - value,
+                currentNetWorth: this.state.currentNetWorth + value,
+            });
+        }
+    }
+
+    // resets the stocks each month
+    stockReset = () => {
+        let newStockVal = [Math.floor(Math.random() * 1001), Math.floor(Math.random() * 1001), Math.floor(Math.random() * 1001)];
+        let newPercentage = [Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31)];
+
+        this.setState({
+            stockVal: newStockVal,
+            percentage: newPercentage
+        });
+    }
+
+
+
     // do all monthly functions
     moveToNextMonth = () => {
         this.monthlyCompoundInterestCashAccounts();
         this.monthlyGetAllowance();
+        this.stockReset();
     };
 
 
     render() {
         return (
             <div className={'Driver'}>
-                <div className="col-md-12">
+                <div className="col">
                     <div className="row">
                         <div className="col-md-3">
                         <Sidebar 
@@ -134,23 +171,56 @@ class Driver extends React.Component {
                         <GIC />
                         </div>
 
+
+                        <div className="col-md-6">
+
+                        </div>
+
+                            <div className="col-md-4" style={{paddingTop: "10px"}}>
+                                <MutualFunds />
+                            </div>
+
+                            <div className="col-md-3" style={{paddingTop: "10px"}}>
+                               
+                            </div>
+
+                            <div className="col-md-3" style={{paddingTop: "10px"}}>
+                                <Stocks 
+                                listOfStocks={this.state.listOfStocks}
+                                listOfUnits={this.state.units}
+                                numStock={0}
+                                stockVal={this.state.stockVal} 
+                                percentage={this.state.percentage}
+                                buyStocks={this.buyStocks}
+                                sellStocks={this.sellStocks}
+                                />
+                            </div>
+                            <div className="col-md-3" style={{paddingTop: "10px"}}>
+                                <Stocks 
+                                listOfStocks={this.state.listOfStocks}
+                                listOfUnits={this.state.units}
+                                numStock={1}
+                                stockVal={this.state.stockVal} 
+                                percentage={this.state.percentage}
+                                buyStocks={this.buyStocks}
+                                sellStocks={this.sellStocks}
+                                />
+                            </div>
+                            <div className="col-md-3" style={{paddingTop: "10px"}}>
+                                <Stocks 
+                                listOfStocks={this.state.listOfStocks}
+                                listOfUnits={this.state.units}
+                                numStock={2}
+                                stockVal={this.state.stockVal} 
+                                percentage={this.state.percentage}
+                                buyStocks={this.buyStocks}
+                                sellStocks={this.sellStocks}
+                                />
+                            </div>
                     </div>
 
-                    <div className="row">
-                        <div className="col-md-3">
-
-                        </div>
-
-                        <div className="col-md-4" style={{paddingTop: "10px"}}>
-                            <MutualFunds />
-                        </div>
-
-                        <div className="col-md-4" style={{paddingTop: "10px"}}>
-                            <Stocks />
-                        </div>
-                        
-                    </div>
                 </div>
+
             </div>
         )
     }

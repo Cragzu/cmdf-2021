@@ -81,7 +81,8 @@
 .percentage-block {
   display: inline-block;
   vertical-align: top;
-  padding: 0 66px;
+  padding: 0 5px;
+  font-size: large;
 }
 
 .stocks-img {
