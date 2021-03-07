@@ -102,9 +102,9 @@ class Driver extends React.Component {
     render() {
         return (
             <div className={'Driver'}>
-                <div className="col-md-12">
+                <div className="col-md-15">
                     <div className="row">
-                        <div className="col-md-3">
+                        <div className="col-md-2">
                         <Sidebar 
                         checkingAccountBalance={this.state.checkingAccountBalance.toFixed(2)}
                         currentNetWorth={this.state.currentNetWorth.toFixed(2)}
@@ -121,8 +121,9 @@ class Driver extends React.Component {
                             subtractBalanceSavingsOnClick={this.subtractBalanceSavings}
                             addBalanceTFSAOnClick={this.addBalanceTFSA}
                             subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
+                            
                         />
-                        <CashAccount
+                         <CashAccount
                             accountTypeIsTFSA={true}
                             tfsaAccountBalance={this.state.tfsaAccountBalance.toFixed(2)}
                             tfsaContributionRoom={this.state.tfsaContributionRoom.toFixed(2)}
@@ -131,7 +132,10 @@ class Driver extends React.Component {
                             addBalanceTFSAOnClick={this.addBalanceTFSA}
                             subtractBalanceTFSAOnClick={this.subtractBalanceTFSA}
                         />
+                        
+                        <div style={{paddingTop: "40em"}}>
                         <GIC />
+                        </div>
                         </div>
 
                     </div>
@@ -141,11 +145,11 @@ class Driver extends React.Component {
 
                         </div>
 
-                        <div className="col-md-4" style={{paddingTop: "10px"}}>
+                        <div className="col-md-4" style={{paddingTop: "40em"}}>
                             <MutualFunds />
                         </div>
 
-                        <div className="col-md-4" style={{paddingTop: "10px"}}>
+                        <div className="col-md-4" style={{paddingTop: "40em"}}>
                             <Stocks />
                         </div>
                         

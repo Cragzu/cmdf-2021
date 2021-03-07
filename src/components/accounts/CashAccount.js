@@ -1,5 +1,6 @@
 import {Component} from 'react';
 import PropTypes from "prop-types";
+import placeholderImg from "../../assets/Group 28.png";
 
 class CashAccount extends Component {
     constructor(props) {
@@ -15,7 +16,9 @@ class CashAccount extends Component {
         return (
             <div>
                 <h5 className={"card-title"} style={{color: "black"}}>{CashAccount.sentences.savings}</h5>
+                <img src={placeholderImg} className="proff-image"/>
                 <p className={"card-text"} style={{color: "black"}}>Balance: ${this.props.savingsAccountBalance}</p>
+                <div style={{ marginLeft: 10, marginRight: 10, borderTopWidth: 1, borderStyle: 'dashed', borderColor:'black'}}></div>
             </div>
         );
     }
@@ -74,7 +77,7 @@ class CashAccount extends Component {
     render() {
         return (
             <div>
-                <div className={"card"}>
+                <div className={"card-account"}>
                     <div className={"card-body"}>
                         {this.props.accountTypeIsTFSA ? this.renderTfsaAccount() : this.renderSavingsAccount()}
                         {this.renderDepositConfirmation()}

@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  overflow-x: hidden;
 }
 
 .App-logo {
@@ -39,22 +40,13 @@
 
 .sidebar {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
   min-height: 100vh;
   width: 20vw;
-  padding: 10px;
-  padding-bottom: 1em;
   background-color: #99D17B;
 }
 
 .sidebar-img {
   height: 3em;
-}
-
-.sidebar-money {
-    font-size: 24px;
 }
 
 .prof-image {
@@ -113,11 +105,47 @@
   font-size: x-large;
 }
 
+.card-account{
+   background-color: #FAF3E9;
+   margin-left: 2.2em;
+   border: 2em solid #8f452c;
+   width: 50em;
+   height: 60em;
+   margin-right: 0;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+
+.card-body{
+ text-align: center;
+ padding: 10em 1em;
+}
+
+.card-title{
+  padding-bottom: 1.5em;
+}
+
+.card-text{
+  /* position: absolute; */
+  width: 863px;
+  height: 21px;
+  /* left: 434px; */
+  top: 494px;
+  justify-content: left;
+}
+
+.proff-image {
+  padding-bottom: 1em;
+}
+
 .cash-account-deposit-confirmation {
   display: flex;
   flex-direction: column;
+  /* background-color: #FAF3E9; */
 }
-
+.gic{
+  position: relative;
+}
 .gis-block {
   display: inline-block;
   vertical-align: top;
