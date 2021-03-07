@@ -22,7 +22,6 @@ class Driver extends React.Component {
             stockVal: [Math.floor(Math.random() * 1001), Math.floor(Math.random() * 1001), Math.floor(Math.random() * 1001)],
             percentage: [Math.floor(Math.random() * 31), Math.floor(Math.random() * 31), Math.floor(Math.random() * 31)],
             units: [0, 0, 0]
-            // add more values as needed
         };
     }
 
@@ -184,7 +183,7 @@ class Driver extends React.Component {
                                
                             </div>
 
-                            <div className="col-md-3" style={{paddingTop: "10px"}}>
+                            <div className="col-md-3" style={{paddingTop: "10px"}} key={this.state.stockVal[0]}>
                                 <Stocks 
                                 listOfStocks={this.state.listOfStocks}
                                 listOfUnits={this.state.units}
@@ -195,7 +194,7 @@ class Driver extends React.Component {
                                 sellStocks={this.sellStocks}
                                 />
                             </div>
-                            <div className="col-md-3" style={{paddingTop: "10px"}}>
+                            <div className="col-md-3" style={{paddingTop: "10px"}} key={this.state.stockVal[1]}>
                                 <Stocks 
                                 listOfStocks={this.state.listOfStocks}
                                 listOfUnits={this.state.units}
@@ -206,7 +205,7 @@ class Driver extends React.Component {
                                 sellStocks={this.sellStocks}
                                 />
                             </div>
-                            <div className="col-md-3" style={{paddingTop: "10px"}}>
+                            <div className="col-md-3" style={{paddingTop: "10px"}} key={this.state.stockVal[2]}>
                                 <Stocks 
                                 listOfStocks={this.state.listOfStocks}
                                 listOfUnits={this.state.units}
