@@ -3,8 +3,7 @@ import MutualFunds from './MutualFunds';
 import Stocks from './Stocks';
 
 import Sidebar from './Sidebar';
-import SavingsAccount from "./accounts/SavingsAccount";
-import TfsaAccount from "./accounts/TfsaAccount";
+import CashAccount from "./accounts/CashAccount";
 
 class Driver extends React.Component {
     constructor(props) {
@@ -114,10 +113,12 @@ class Driver extends React.Component {
                         </div>
 
                         <div className="col-sm">
-                        <SavingsAccount
+                        <CashAccount
+                            accountTypeIsTFSA={false}
                             savingsAccountBalance={this.state.savingsAccountBalance}
                         />
-                        <TfsaAccount
+                        <CashAccount
+                            accountTypeIsTFSA={true}
                             tfsaAccountBalance={this.state.tfsaAccountBalance}
                             tfsaContributionRoom={this.state.tfsaContributionRoom}
                         />
