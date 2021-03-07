@@ -6,6 +6,7 @@ class CashAccount extends Component {
         super(props);
         this.state = {
             test: true,
+            default: true,
         };
     }
 
@@ -28,14 +29,37 @@ class CashAccount extends Component {
         );
     }
 
+    renderDepositConfirmation(isDeposit) {
+        return (
+            <div className={"cash-account-deposit-confirmation"}>
+                <input
+                    placeholder={CashAccount.sentences.inputPlaceholder}
+                />
+                <div>
+                    <button
+                        type="button"
+                        className="btn btn-secondary card-button"
+                    >
+                        {CashAccount.sentences.deposit}
+                    </button>
+                    <button
+                        type="button"
+                        className="btn btn-secondary card-button"
+                    >
+                        {isDeposit ? CashAccount.sentences.deposit : CashAccount.sentences.withdraw}
+                    </button>
+                </div>
+            </div>
+        )
+    }
+
     render() {
         return (
             <div>
                 <div className={"card"}>
                     <div className={"card-body"}>
                         {this.props.accountTypeIsTFSA ? this.renderTfsaAccount() : this.renderSavingsAccount()}
-                        <button type="button" className="btn btn-secondary card-button">{CashAccount.sentences.deposit}</button>
-                        <button type="button" className="btn btn-secondary card-button">{CashAccount.sentences.withdraw}</button>
+                        {this.renderDepositConfirmation()}
                     </div>
                 </div>
             </div>
@@ -48,6 +72,10 @@ CashAccount.propTypes = {
     savingsAccountBalance: PropTypes.number,
     tfsaAccountBalance: PropTypes.number,
     tfsaContributionRoom: PropTypes.number,
+    addBalanceSavingsOnClick: PropTypes.func,
+    subtractBalanceSavingsOnClick: PropTypes.func,
+    addBalanceTFSAOnClick: PropTypes.func,
+    subtractBalanceTFSAOnClick: PropTypes.func,
 };
 
 CashAccount.sentences = {
@@ -56,6 +84,7 @@ CashAccount.sentences = {
   deposit: "Deposit",
   withdraw: "Withdraw",
   cancel: "Cancel",
+  inputPlaceholder: "Enter amount",
 };
 
 export default CashAccount;

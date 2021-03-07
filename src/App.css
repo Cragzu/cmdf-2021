@@ -100,3 +100,8 @@
 .text-units {
   font-size: x-large;
 }
+
+.cash-account-deposit-confirmation {
+  display: flex;
+  flex-direction: column;
+}
