@@ -1,4 +1,5 @@
 import react, { Component } from 'react';
+import PropTypes from 'prop-types';
 import placeholderImg from '../assets/hasComfy.png';
 
 class Sidebar extends Component{
@@ -6,7 +7,7 @@ class Sidebar extends Component{
         super(props);
     }
 
-    
+
 
     render() {
         return(
@@ -34,5 +35,9 @@ class Sidebar extends Component{
         );
     }
 }
+
+Sidebar.propTypes = {
+    click: PropTypes.func.isRequired,
+};
 
 export default Sidebar;
