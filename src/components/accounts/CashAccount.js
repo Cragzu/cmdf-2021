@@ -7,6 +7,7 @@ class CashAccount extends Component {
         this.state = {
             test: true,
             default: true,
+            inputAmount: '',
         };
     }
 
@@ -30,17 +31,25 @@ class CashAccount extends Component {
     }
 
     deposit() {
-        this.props.accountTypeIsTFSA ? this.props.addBalanceTFSAOnClick(5) : this.props.addBalanceSavingsOnClick(5)
+        let amount = Number(this.state.inputAmount);
+        console.log(amount);
+        if (!isNaN(amount)) {
+            this.props.accountTypeIsTFSA ? this.props.addBalanceTFSAOnClick(amount) : this.props.addBalanceSavingsOnClick(amount);
+        }
     }
 
     withdraw() {
-        this.props.accountTypeIsTFSA ? this.props.subtractBalanceTFSAOnClick(5) : this.props.subtractBalanceSavingsOnClick(5)
+        let amount = Number(this.state.inputAmount);
+        if (!isNaN(amount)) {
+            this.props.accountTypeIsTFSA ? this.props.subtractBalanceTFSAOnClick(amount) : this.props.subtractBalanceSavingsOnClick(amount);
+        }
     }
 
     renderDepositConfirmation(isDeposit) {
         return (
             <div className={"cash-account-deposit-confirmation"}>
                 <input
+                    onChange={(evt) => { this.setState({inputAmount: evt.target.value}); }} // update state with text box value
                     placeholder={CashAccount.sentences.inputPlaceholder}
                 />
                 <div>

@@ -105,8 +105,8 @@ class Driver extends React.Component {
                     <div className="row">
                         <div className="col-md-3">
                         <Sidebar 
-                        checkingAccountBalance={this.state.checkingAccountBalance}
-                        currentNetWorth={this.state.currentNetWorth}
+                        checkingAccountBalance={this.state.checkingAccountBalance.toFixed(2)}
+                        currentNetWorth={this.state.currentNetWorth.toFixed(2)}
                         currentMonth={this.state.currentMonth}
                         changeMonthButtonOnClick={this.moveToNextMonth}
                         />
@@ -115,7 +115,7 @@ class Driver extends React.Component {
                         <div className="col-sm">
                         <CashAccount
                             accountTypeIsTFSA={false}
-                            savingsAccountBalance={this.state.savingsAccountBalance}
+                            savingsAccountBalance={this.state.savingsAccountBalance.toFixed(2)}
                             addBalanceSavingsOnClick={this.addBalanceSavings}
                             subtractBalanceSavingsOnClick={this.subtractBalanceSavings}
                             addBalanceTFSAOnClick={this.addBalanceTFSA}
@@ -123,8 +123,8 @@ class Driver extends React.Component {
                         />
                         <CashAccount
                             accountTypeIsTFSA={true}
-                            tfsaAccountBalance={this.state.tfsaAccountBalance}
-                            tfsaContributionRoom={this.state.tfsaContributionRoom}
+                            tfsaAccountBalance={this.state.tfsaAccountBalance.toFixed(2)}
+                            tfsaContributionRoom={this.state.tfsaContributionRoom.toFixed(2)}
                             addBalanceSavingsOnClick={this.addBalanceSavings}
                             subtractBalanceSavingsOnClick={this.subtractBalanceSavings}
                             addBalanceTFSAOnClick={this.addBalanceTFSA}
